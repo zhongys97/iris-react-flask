@@ -7,7 +7,7 @@ services:
         volumes:
             - "./server:/app"
     web:
-        build: "./frontend"
+        build: "./frontend-app/frontend"
         ports:
             - "80:3000"
         volumes:
