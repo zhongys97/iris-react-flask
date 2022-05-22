@@ -3,6 +3,7 @@ import "./App.css";
 import React from "react";
 import { EnterAndPredict } from "./components/EnterAndPredict";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Container } from "@mui/system";
 
 function App() {
     return (
@@ -12,7 +13,9 @@ function App() {
                     <Route path="/" component={EnterAndPredict}></Route>
                 </Routes>
             </Router> */}
-            <EnterAndPredict />
+            <Container maxWidth="md">
+                <EnterAndPredict />
+            </Container>
         </div>
     );
 }
