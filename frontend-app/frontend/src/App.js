@@ -1,21 +1,29 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
-import { EnterAndPredict } from "./components/EnterAndPredict";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Welcome from "./Pages/Welcome";
+import SepalEntry from "./Pages/SepalEntry";
+import PetalEntry from "./Pages/PetalEntry";
+import { EnterAndPredict } from "./Pages/EnterAndPredict";
+import ShowPrediction from "./Pages/ShowPrediction";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { Container } from "@mui/system";
 
 function App() {
     return (
-        <div className="App">
-            {/* <Router>
+        <div>
+            <BrowserRouter>
                 <Routes>
-                    <Route path="/" component={EnterAndPredict}></Route>
+                    <Route exact path="/" element={<Welcome />}></Route>
+                    <Route exact path="/sepal" element={<SepalEntry />}></Route>
+                    <Route exact path="/petal" element={<PetalEntry />}></Route>
+                    <Route
+                        exact
+                        path="/prediction"
+                        element={<ShowPrediction />}
+                    ></Route>
                 </Routes>
-            </Router> */}
-            <Container maxWidth="md">
-                <EnterAndPredict />
-            </Container>
+            </BrowserRouter>
+            ;
         </div>
     );
 }
